@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (last) {
 				last[0].removeAttribute('aria-selected');
 				last[0].setAttribute('tabindex', 0);
-				last[1].setAttribute('hidden', '');
+				last[1].setAttribute('aria-hidden', 'true');
 			}
 
 			tab[0].setAttribute('aria-selected', 'true');
-			tab[1].removeAttribute('hidden', '');
+			tab[1].removeAttribute('aria-hidden');
 			tab[1].setAttribute('tabindex', -1);
 			tab[1].focus();
 

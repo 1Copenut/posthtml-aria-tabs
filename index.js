@@ -62,7 +62,7 @@ module.exports = function (opts) {
 					node.attrs['aria-labelledby'] = id + '-' + suffix;
 
 					if (!tabs[id]) {
-						node.attrs.hidden = true;
+						node.attrs['aria-hidden'] = 'true';
 					}
 				}
 
