@@ -16,11 +16,11 @@
 		var cache = {}, last;
 
 		document.addEventListener('DOMContentLoaded', function () {			
-			Array.prototype.forEach.call(document.querySelectorAll('[role="tablist"]'), function (tablist) {
-				Array.prototype.forEach.call(tablist.querySelectorAll('[href^="#"][role="tab"]'), function (tab, index, tabs) {
+			Array.prototype.forEach.call(document.querySelectorAll('[class="tablist"]'), function (tablist) {
+				Array.prototype.forEach.call(tablist.querySelectorAll('[href^="#"][class*="tab"]'), function (tab, index, tabs) {
 					cache[tab.hash] = [tab, document.getElementById(tab.getAttribute('aria-controls'))];
 
-					if (tab.getAttribute('aria-selected') === 'true') {
+					if (tab.classList.contains('selected') === true) {
 						last = cache[tab.hash];
 					} else {
 						tab.setAttribute('tabindex', 0);
@@ -33,15 +33,15 @@
 
 				if (tab) {
 					if (last) {
-						last[0].removeAttribute('aria-selected');
+						last[0].classList.remove('selected');
 						last[0].setAttribute('tabindex', 0);
 						last[1].setAttribute('aria-hidden', 'true');
 					}
 
-					tab[0].setAttribute('aria-selected', 'true');
+					tab[0].classList.add('selected');
 					tab[1].removeAttribute('aria-hidden');
-					tab[1].setAttribute('tabindex', -1);
-					tab[1].focus();
+					tab[1].children[0].setAttribute('tabindex', -1);
+					tab[1].children[0].focus();
 
 					last = tab;
 				}
