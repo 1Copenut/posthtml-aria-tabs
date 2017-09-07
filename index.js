@@ -18,7 +18,7 @@ module.exports = function (opts) {
 					if (node.tag === 'li') {
 						node.attrs = node.attrs || {};
 
-						node.attrs.role = 'presentation';
+						node.attrs.class = 'tabitem';
 					}
 
 					// conditionally transform tabs
@@ -27,7 +27,7 @@ module.exports = function (opts) {
 						var isActive = node.attrs['aria-selected'];
 
 						node.attrs.id = id + '-' + suffix;
-						node.attrs.role = 'tab';
+						node.attrs.class = 'tab';
 						node.attrs['aria-controls'] = id;
 
 						if (isActive) {
@@ -40,7 +40,7 @@ module.exports = function (opts) {
 				}
 
 				// detect tab lists
-				if (node.attrs && node.attrs.role === 'tablist') {
+				if (node.attrs && node.attrs.class === 'tablist') {
 					isTablist = true;
 				}
 

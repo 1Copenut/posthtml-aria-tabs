@@ -1,25 +1,25 @@
-<ul role="tablist">
-	<li role="presentation">
-		<a href="#foo" aria-selected="true" id="foo-tab" role="tab" aria-controls="foo">Foo</a>
+<ul class="tablist">
+	<li class="tabitem">
+		<a href="#foo" aria-selected="true" id="foo-tab" class="tab" aria-controls="foo">Foo</a>
 	</li>
 
-	<li role="presentation">
-		<a href="#bar" id="bar-tab" role="tab" aria-controls="bar">Bar</a>
+	<li class="tabitem">
+		<a href="#bar" id="bar-tab" class="tab" aria-controls="bar">Bar</a>
 	</li>
 
-	<li role="presentation">
-		<a href="#qux" id="qux-tab" role="tab" aria-controls="qux">Qux</a>
+	<li class="tabitem">
+		<a href="#qux" id="qux-tab" class="tab" aria-controls="qux">Qux</a>
 	</li>
 </ul>
 
 <section id="foo" role="tabpanel" aria-labelledby="foo-tab">
-	This is the foo tab.
+	<h1>This is the foo tab read out by assistive device.</h1>
 </section>
 
 <section id="bar" role="tabpanel" aria-labelledby="bar-tab" aria-hidden="true">
-	This is the bar tab.
+	<h1>This is the bar tab read out by assistive device.</h1>
 </section>
 
 <section id="qux" role="tabpanel" aria-labelledby="qux-tab" aria-hidden="true">
-	This is the qux tab.
+	<h1>This is the qux tab read out by assistive device.</h1>
 </section>
